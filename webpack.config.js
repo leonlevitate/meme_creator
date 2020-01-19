@@ -29,8 +29,20 @@ module.exports = {
           options: {
             presets: ["env", "es2015"]
           }
-        }
-      }
+        },
+        test: /\.(png|jpg|gif)$/,
+        loaders: [
+            {
+            loader: 'url-loader',
+            options: {
+                limit: 10000,
+                name: 'images/[name].[ext]'
+            }
+            },
+        'img-loader'
+        ],
+        },
+      },
     ]
   },
   plugins: [
